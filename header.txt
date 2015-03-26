@@ -1,0 +1,4 @@
+*! Date        : 3sept2014
+*! Version     : 1.0.4
+*! Author      : Thomas Grund, Linkoping University
+*! Email	   : contact@nwcommands.org
