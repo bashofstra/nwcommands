@@ -6,10 +6,10 @@
 #	add_headers.sh test1.txt test2.txt ...
 #
 # assuming header data is stored in 'headers.txt' and 
-# all headers start with a dash and a whitespace
+# all headers start with a star, an exclamation mark and a whitespace
 
 # header file
-HEADERFILE=headers.txt
+HEADERFILE=header.txt
 
 # if headers file is missing a newline at the end, add it
 if [ $(tail -c 1 $HEADERFILE) != "" ]; then
@@ -32,8 +32,8 @@ for file in $files; do
 	mv $file ${file}.bak
 	# add header to new file
 	cat $HEADERFILE > ${file}
-	# copy all lines not starting with dash
-	sed "/^# /d" ${file}.bak >> ${file}
+	# copy all lines not starting with star, exclamation mark and whitespace
+	sed "/^*! /d" ${file}.bak >> ${file}
 	# delete backup	
 	rm ${file}.bak	
 done
